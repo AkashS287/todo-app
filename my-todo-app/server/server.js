@@ -22,6 +22,10 @@ app.use("/api/tasks", taskRoutes);
 app.use("/api/auth", authRoutes);
 app.use('/api/shared', sharedRoutes);
 
+app.get("/", (req, res) => {
+  res.send("✅ Backend is live! Welcome to the Todo API.");
+});
+
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     app.listen(process.env.PORT || 5000, () => {
