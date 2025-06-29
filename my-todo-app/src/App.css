@@ -1,0 +1,207 @@
+/* Reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* Theme Colors */
+:root {
+  --gold: #FFD700;
+  --orange: #FF8C00;
+  --black: #1a1a1a;
+  --white: #ffffff;
+}
+
+/* App container */
+.app {
+  min-height: 100vh;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.app.dark {
+  background-color: #1e1e1e;
+  color: var(--white);
+}
+
+/* Header */
+h1 {
+  text-align: center;
+  color: #e98b11;
+  margin-bottom: 1.5rem;
+}
+
+/* Login Buttons */
+.login-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.login-buttons button {
+  background: var(--black);
+  color: var(--white);
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s;
+}
+
+.login-buttons button:hover {
+  background: #333;
+}
+
+/* Toggle Button */
+.toggle-mode {
+  background: none;
+  border: none;
+  color: var(--orange);
+  text-decoration: underline;
+  cursor: pointer;
+  display: block;
+  margin: 1rem auto;
+}
+
+/* Input Group */
+.input-group {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 400px;
+  margin: 1rem auto;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.input-group button {
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, var(--gold), var(--orange));
+  color: var(--black);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.input-group button:hover {
+  background: linear-gradient(135deg, var(--orange), var(--gold));
+  color: var(--white);
+}
+
+/* Todo List */
+ul {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+li {
+  background-color: #fff;
+  margin-bottom: 0.8rem;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+}
+
+.app.dark li {
+  background-color: #2a2a2a;
+}
+
+/* Todo Item */
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.todo-item input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.todo-item span {
+  font-size: 1rem;
+}
+
+/* Icons */
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icons svg {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.icons svg:hover {
+  transform: scale(1.2);
+}
+
+/* Dark Mode Button Overwrites */
+.app.dark .input-group button,
+.app.dark .login-buttons button {
+  background: linear-gradient(135deg, var(--black), var(--orange));
+  color: var(--white);
+  border: 1px solid var(--gold);
+}
+
+.app.dark .input-group button:hover,
+.app.dark .login-buttons button:hover {
+  background: linear-gradient(135deg, var(--orange), var(--black));
+  color: var(--gold);
+}
+/* Layout for top control buttons */
+.control-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.control-buttons button {
+  padding: 0.6rem 1.4rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--gold), var(--orange));
+  color: var(--black);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.control-buttons button:hover {
+  background: linear-gradient(135deg, var(--orange), var(--gold));
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.app.dark .control-buttons button {
+  background: linear-gradient(135deg, var(--black), var(--orange));
+  color: var(--white);
+  border: 1px solid var(--gold);
+}
+
+.app.dark .control-buttons button:hover {
+  background: linear-gradient(135deg, var(--orange), var(--black));
+  color: var(--gold);
+}
