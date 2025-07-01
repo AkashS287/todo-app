@@ -16,9 +16,17 @@ export const createTask = async (req, res) => {
 };
 
 export const updateTask = async (req, res) => {
-  const updated = await Task.findByIdAndUpdate(req.params.id, req.body, { new: true });
-  res.json(updated);
+  try {
+    const updated = await Task.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    if (!updated) {
+      return res.status(404).json({ error: 'Task not found' });
+    }
+    res.json(updated);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 };
+
 
 export const deleteTask = async (req, res) => {
   await Task.findByIdAndDelete(req.params.id);

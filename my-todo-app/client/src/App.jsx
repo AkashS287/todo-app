@@ -103,16 +103,11 @@ function App() {
   }
 
   try {
-      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/shared`,
-      {
-        from: user.email,
-        to: todo.shareWith.trim(),
-        task: todo.text
-      },
-      {
-        withCredentials: true,
-      }
-    );
+    await shareTask({
+      from: user.email,
+      to: todo.shareWith.trim(),
+      task: todo.text
+    });
 
     toast.success("Task shared successfully!");
   } catch (error) {
@@ -152,7 +147,7 @@ function App() {
   
   const fetchSharedTasks = async () => {
   try {
-    const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/shared/${user.email}`);
+   const res = await getSharedTasks(user.email);
     const shared = res.data;
 
     setTodos(prev => [

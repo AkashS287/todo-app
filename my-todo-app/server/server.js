@@ -15,9 +15,6 @@ dotenv.config();
 
 const app = express();
 app.use(cors({ origin: ['http://localhost:5173',
-    'https://todo-app-akash-ss-projects-5fe5c2cb.vercel.app',
-    'https://todo-app-git-main-akash-ss-projects-5fe5c2cb.vercel.app',
-    'https://todo-jmdwskgvb-akash-ss-projects-5fe5c2cb.vercel.app',
     'https://todo-app-umber-zeta-22.vercel.app'], credentials: true }));
 app.use(express.json());
 app.use(cookieParser());

@@ -1,14 +1,15 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'https://todo-app-q8sp.onrender.com',
+  baseURL: import.meta.env.VITE_API_BASE_URL,
   withCredentials: true,
 });
 
-export const getTasks = () => API.get('/tasks');
-export const createTask = (data) => API.post('/tasks', data);
-export const updateTask = (id, data) => API.put(`/tasks/${id}`, data);
-export const deleteTask = (id) => API.delete(`/tasks/${id}`);
-export const loginWithOAuth = (data) => API.post('/auth/oauth', data);
-export const shareTask = (data) => API.post('/shared', data);
-export const getSharedTasks = (email) => API.get(`/shared/${email}`);
+// ✅ FIXED PATHS:
+export const getTasks = () => API.get('/api/tasks');
+export const createTask = (data) => API.post('/api/tasks', data);
+export const updateTask = (id, data) => API.put(`/api/tasks/${id}`, data);
+export const deleteTask = (id) => API.delete(`/api/tasks/${id}`);
+export const loginWithOAuth = (data) => API.post('/api/auth/oauth', data);
+export const shareTask = (data) => API.post('/api/shared', data);
+export const getSharedTasks = (email) => API.get(`/api/shared/${email}`);
