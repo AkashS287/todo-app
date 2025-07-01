@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'https://todo-app-q8sp.onrender.com/api',
+  baseURL: 'https://todo-app-q8sp.onrender.com',
   withCredentials: true,
 });
 

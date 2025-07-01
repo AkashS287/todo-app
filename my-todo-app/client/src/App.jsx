@@ -103,8 +103,7 @@ function App() {
   }
 
   try {
-    const response = await axios.post(
-      'http://localhost:5000/api/shared',
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/shared`,
       {
         from: user.email,
         to: todo.shareWith.trim(),
@@ -153,7 +152,7 @@ function App() {
   
   const fetchSharedTasks = async () => {
   try {
-    const res = await axios.get(`http://localhost:5000/api/shared/${user.email}`);
+    const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/shared/${user.email}`);
     const shared = res.data;
 
     setTodos(prev => [
